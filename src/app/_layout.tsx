@@ -24,7 +24,7 @@ export default function Layout() {
 
   return (
     <>
-      <StatusBar barStyle="light-content" backgroundColor={colors.background} />
+      <StatusBar barStyle="light-content" backgroundColor={colors.background} translucent />
       <Stack
         screenOptions={{
           headerShown: false,

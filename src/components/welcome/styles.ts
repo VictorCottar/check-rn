@@ -5,8 +5,6 @@ export const s = StyleSheet.create({
   container: {
     padding: 40,
     gap: 30,
-    flexDirection: 'row',
-    justifyContent: 'center',
     alignItems: 'center',
   },
   title: {
