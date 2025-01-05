@@ -1,3 +1,4 @@
+import React from 'react'
 import { Text, View, TouchableOpacity } from 'react-native'
 import { IconPlus } from '@tabler/icons-react-native'
 import { s } from './styles'
