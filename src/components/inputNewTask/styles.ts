@@ -15,7 +15,7 @@ export const s = StyleSheet.create({
     alignItems: 'center',
     padding: 20,
     marginTop: 18,
-    gap: 40
+    gap: 30
   },
   title: {
     fontFamily: fontFamily.bold,
@@ -28,6 +28,10 @@ export const s = StyleSheet.create({
     borderWidth: 2,
     borderColor: colors.primary,
     borderRadius: 8,
-    fontSize: 18,
+    fontSize: 17,
+  },
+  picker: {
+    width: '100%',
+    color: colors.tertiary,
   }
 })
