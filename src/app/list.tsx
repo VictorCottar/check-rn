@@ -9,9 +9,9 @@ export default function List() {
     <View style={{ flex: 1 }}>
       <Header />
 
-      <Priorities selected="Alta" onChange={(priority) => console.log(priority)} />
+      <Priorities selected="Baixa" onChange={(priority) => console.log(priority)} />
 
-        
+
     </View>
   )
 }
