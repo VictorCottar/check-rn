@@ -1,14 +1,49 @@
-import React, { useState, useRef } from 'react'
-import { Text, View, TextInput } from 'react-native'
+import React, { useState } from 'react'
+import { Text, View, TextInput, Alert } from 'react-native'
 import { Button } from '@/components/button'
 import { s } from './styles'
 import { colors } from '@/styles/colors'
-import { Picker } from '@react-native-picker/picker';
+import { Priorities } from '@/components/priorities'
+import { linkStorage } from '@/storage/task-storage'
+import { router } from 'expo-router'
 
 export function InputNewTask() {
-  const [selectedPriority, setSelectedPriority] = useState();
+  const [name, setName] = useState('')
+  const [description, setDescription] = useState('')
+  const [priority, setPriority] = useState('')
 
-  const pickerRef = useRef();
+  async function handleAdd() {
+    try {
+      if (!name.trim()) {
+        return Alert.alert('Nome', 'Digite o nome da tarefa')
+      }
+
+      if (!description.trim()) {
+        return Alert.alert('Descrição', 'Digite a descrição da tarefa')
+      }
+
+      if (!priority) {
+        return Alert.alert('Prioridade', 'Selecione uma prioridade para a tarefa')
+      }
+
+      await linkStorage.save({
+        id: new Date().getTime().toString(),
+        name,
+        description,
+        priority
+      })
+
+      Alert.alert('Sucesso', 'Tarefa adicionada com sucesso', [
+        {
+          text: 'Ok',
+          onPress: () => router.push('/list')
+        }
+      ])
+
+    } catch (error) {
+      return Alert.alert('Erro', 'Não foi possível adicionar a tarefa')
+    }
+  }
 
   return (
     <View style={s.container}>
@@ -19,6 +54,7 @@ export function InputNewTask() {
           placeholder="Digite o nome da tarefa"
           placeholderTextColor={colors.tertiary}
           style={s.input}
+          onChangeText={setName}
         />
 
         <TextInput
@@ -29,25 +65,15 @@ export function InputNewTask() {
           placeholder="Digite a descrição da tarefa"
           placeholderTextColor={colors.tertiary}
           style={s.input}
+          onChangeText={setDescription}
         />
 
+        <View style={s.priority}>
+          <Text style={s.labelPriority}>Prioridade da tarefa</Text>
+          <Priorities selected={priority} onChange={setPriority} typePriority='newTask' />
+        </View>
 
-        <Picker
-          ref={pickerRef}
-          selectedValue={selectedPriority}
-          onValueChange={(itemValue) =>
-            setSelectedPriority(itemValue)
-          }
-          style={s.picker}
-          dropdownIconColor={colors.primary}
-        >
-          <Picker.Item label="Selecione a prioridade" value="" />
-          <Picker.Item label="Alta" value="Alta" />
-          <Picker.Item label="Média" value="Media" />
-          <Picker.Item label="Baixa" value="Baixa" />
-        </Picker>
-
-        <Button title="Adicionar" onPress={() => { }} />
+        <Button title="Adicionar" onPress={handleAdd} />
       </View>
     </View>
   )

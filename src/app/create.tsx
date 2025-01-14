@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { router } from 'expo-router'
-import { View, TouchableOpacity } from 'react-native'
+import { View, TouchableOpacity, Alert } from 'react-native'
 import { IconArrowLeft } from '@tabler/icons-react-native'
 import { colors } from '@/styles/theme'
 import { InputNewTask } from '@/components/inputNewTask'
-
+import { priorities } from '@/utils/priorities'
+import { linkStorage } from '@/storage/task-storage'
 
 export default function Create() {
   return (

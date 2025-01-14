@@ -5,13 +5,14 @@ import { Priority } from "@/components/priority"
 
 type Props = {
   selected: string,
-  onChange: (priority: string) => void
+  onChange: (priority: string) => void,
+  typePriority?: string
 }
 
-export function Priorities({ selected, onChange }: Props) {
+export function Priorities({ selected, onChange, typePriority }: Props) {
   return (
     <FlatList
-      data={priorities}
+      data={typePriority === 'newTask' ? priorities.slice(1) : priorities}
       keyExtractor={(item) => item.id}
       renderItem={({ item }) => (
         <Priority

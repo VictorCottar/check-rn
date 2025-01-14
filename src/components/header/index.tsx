@@ -21,7 +21,6 @@ export function Header() {
         </TouchableOpacity>
 
       </View>
-      <View style={s.line} />
     </>
   )
 }

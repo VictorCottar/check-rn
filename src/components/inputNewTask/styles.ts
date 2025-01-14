@@ -29,9 +29,19 @@ export const s = StyleSheet.create({
     borderColor: colors.primary,
     borderRadius: 8,
     fontSize: 17,
+    color: colors.primary,
+    fontFamily: fontFamily.medium,
   },
-  picker: {
+  priority: {
     width: '100%',
-    color: colors.tertiary,
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    gap: 3
+  },
+  labelPriority: {
+    fontFamily: fontFamily.medium,
+    fontSize: 18,
+    color: colors.tertiary
   }
 })
