@@ -3,7 +3,7 @@ import { router } from 'expo-router'
 import { View, TouchableOpacity, Alert } from 'react-native'
 import { IconArrowLeft } from '@tabler/icons-react-native'
 import { colors } from '@/styles/theme'
-import { InputNewTask } from '@/components/inputNewTask'
+import { InputsNewTask } from '@/components/inputNewTask'
 import { priorities } from '@/utils/priorities'
 import { linkStorage } from '@/storage/task-storage'
 
@@ -19,7 +19,7 @@ export default function Create() {
         </TouchableOpacity>
       </View>
 
-      <InputNewTask />
+      <InputsNewTask />
     </>
   )
 }

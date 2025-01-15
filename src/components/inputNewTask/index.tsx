@@ -7,7 +7,7 @@ import { Priorities } from '@/components/priorities'
 import { linkStorage } from '@/storage/task-storage'
 import { router } from 'expo-router'
 
-export function InputNewTask() {
+export function InputsNewTask() {
   const [name, setName] = useState('')
   const [description, setDescription] = useState('')
   const [priority, setPriority] = useState('')

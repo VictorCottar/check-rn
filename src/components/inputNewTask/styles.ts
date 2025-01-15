@@ -19,18 +19,18 @@ export const s = StyleSheet.create({
   },
   title: {
     fontFamily: fontFamily.bold,
-    fontSize: 26,
+    fontSize: 25,
     color: colors.primary
   },
   input: {
     width: '100%',
-    padding: 16,
+    padding: 14,
     borderWidth: 2,
     borderColor: colors.primary,
     borderRadius: 8,
-    fontSize: 17,
+    fontSize: 15,
     color: colors.primary,
-    fontFamily: fontFamily.medium,
+    fontFamily: fontFamily.regular,
   },
   priority: {
     width: '100%',
