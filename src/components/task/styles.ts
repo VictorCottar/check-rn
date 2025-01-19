@@ -13,20 +13,14 @@ export const s = StyleSheet.create({
   },
   name: {
     color: colors.primary,
-    fontSize: 15,
+    fontSize: 16,
     fontFamily: fontFamily.bold,
   },
   description: {
     color: colors.tertiary,
-    fontSize: 12,
+    fontSize: 13,
     fontFamily: fontFamily.regular,
     width: "90%",
-    marginLeft: 6
-  },
-  priority: {
-    color: colors.secondary,
-    fontSize: 12,
-    marginLeft: 6
-  },
-
+    marginLeft: 4
+  }
 })

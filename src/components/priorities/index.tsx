@@ -6,7 +6,7 @@ import { Priority } from "@/components/priority"
 type Props = {
   selected: string,
   onChange: (priority: string) => void,
-  typePriority?: string
+  typePriority?: string,
 }
 
 export function Priorities({ selected, onChange, typePriority }: Props) {

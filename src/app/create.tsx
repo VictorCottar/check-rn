@@ -4,8 +4,6 @@ import { View, TouchableOpacity, Alert } from 'react-native'
 import { IconArrowLeft } from '@tabler/icons-react-native'
 import { colors } from '@/styles/theme'
 import { InputsNewTask } from '@/components/inputNewTask'
-import { priorities } from '@/utils/priorities'
-import { linkStorage } from '@/storage/task-storage'
 
 export default function Create() {
   return (

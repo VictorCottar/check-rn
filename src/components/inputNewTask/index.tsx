@@ -4,7 +4,7 @@ import { Button } from '@/components/button'
 import { s } from './styles'
 import { colors } from '@/styles/colors'
 import { Priorities } from '@/components/priorities'
-import { linkStorage } from '@/storage/task-storage'
+import { taskStorage } from '@/storage/task-storage'
 import { router } from 'expo-router'
 
 export function InputsNewTask() {
@@ -26,7 +26,7 @@ export function InputsNewTask() {
         return Alert.alert('Prioridade', 'Selecione uma prioridade para a tarefa')
       }
 
-      await linkStorage.save({
+      await taskStorage.save({
         id: new Date().getTime().toString(),
         name,
         description,
@@ -61,7 +61,7 @@ export function InputsNewTask() {
           editable
           multiline
           numberOfLines={4}
-          maxLength={40}
+          maxLength={70}
           placeholder="Digite a descrição da tarefa"
           placeholderTextColor={colors.tertiary}
           style={s.input}

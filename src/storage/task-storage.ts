@@ -40,4 +40,4 @@ async function remove(id: string) {
   }
 }
 
-export const linkStorage = { get, save, remove }
+export const taskStorage = { get, save, remove }
