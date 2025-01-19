@@ -9,7 +9,7 @@ type Props = PressableProps & {
 
 export function Priority({ name, isSelected, ...props }: Props) {
   const color = isSelected ? colors.primary : colors.tertiary
-  
+
   return (
     <Pressable style={s.container} {...props}>
       <Text style={[s.name, { color }]}>{name}</Text>

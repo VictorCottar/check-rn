@@ -1,6 +1,6 @@
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native'
 import { IconDots } from '@tabler/icons-react-native'
-import { s } from './styles';
+import { s } from './styles'
 import { colors } from '@/styles/theme'
 
 type TaskProps = {
@@ -17,7 +17,6 @@ export function Task({ name, description, onDetails }: TaskProps) {
         <Text style={s.description}>{description}</Text>
       </View>
       <View>
-
         <TouchableOpacity onPress={onDetails}>
           <IconDots size={25} color={colors.primary} />
         </TouchableOpacity>

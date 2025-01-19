@@ -1,5 +1,5 @@
-import { StyleSheet } from 'react-native';
-import { colors, fontFamily } from '@/styles/theme';
+import { StyleSheet } from 'react-native'
+import { colors, fontFamily } from '@/styles/theme'
 
 export const s = StyleSheet.create({
   container: {
@@ -11,7 +11,7 @@ export const s = StyleSheet.create({
   },
   tasks: {
     borderTopWidth: 1,
-    borderTopColor: colors.tertiary
+    borderTopColor: colors.tertiary,
   },
   taskContent: {
     gap: 35,
@@ -28,7 +28,7 @@ export const s = StyleSheet.create({
     borderTopColor: colors.primary,
     paddingBottom: 30,
     padding: 24,
-    gap: 10
+    gap: 10,
   },
   modalHeader: {
     width: '100%',
@@ -45,13 +45,13 @@ export const s = StyleSheet.create({
     color: colors.tertiary,
     fontSize: 16,
     fontFamily: fontFamily.regular,
-    marginLeft: 4
+    marginLeft: 4,
   },
   modalTaskPriority: {
     color: colors.tertiary,
     fontSize: 16,
     fontFamily: fontFamily.regular,
-    marginLeft: 4
+    marginLeft: 4,
   },
   modalFooter: {
     flexDirection: 'row',
@@ -61,5 +61,5 @@ export const s = StyleSheet.create({
     borderTopWidth: 1,
     borderTopColor: colors.primary,
     paddingVertical: 20,
-  }
+  },
 })

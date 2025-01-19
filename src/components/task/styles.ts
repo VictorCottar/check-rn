@@ -1,11 +1,11 @@
-import { StyleSheet } from 'react-native';
-import { colors, fontFamily } from '@/styles/theme';
+import { StyleSheet } from 'react-native'
+import { colors, fontFamily } from '@/styles/theme'
 
 export const s = StyleSheet.create({
   container: {
-    flexDirection: "row",
-    width: "100%",
-    alignItems: "center",
+    flexDirection: 'row',
+    width: '100%',
+    alignItems: 'center',
     gap: 12,
   },
   details: {
@@ -20,7 +20,7 @@ export const s = StyleSheet.create({
     color: colors.tertiary,
     fontSize: 13,
     fontFamily: fontFamily.regular,
-    width: "90%",
-    marginLeft: 4
-  }
+    width: '90%',
+    marginLeft: 4,
+  },
 })

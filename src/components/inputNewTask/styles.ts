@@ -15,12 +15,12 @@ export const s = StyleSheet.create({
     alignItems: 'center',
     padding: 20,
     marginTop: 18,
-    gap: 30
+    gap: 30,
   },
   title: {
     fontFamily: fontFamily.bold,
     fontSize: 25,
-    color: colors.primary
+    color: colors.primary,
   },
   input: {
     width: '100%',
@@ -37,11 +37,11 @@ export const s = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    gap: 3
+    gap: 3,
   },
   labelPriority: {
     fontFamily: fontFamily.medium,
     fontSize: 18,
-    color: colors.tertiary
-  }
+    color: colors.tertiary,
+  },
 })

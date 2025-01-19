@@ -1,7 +1,7 @@
 import { View, Text } from 'react-native'
-import { IconProps } from '@tabler/icons-react-native';
+import { IconProps } from '@tabler/icons-react-native'
 import { colors } from '@/styles/theme'
-import { s } from "./styles";
+import { s } from './styles'
 
 type stepProps = {
   title: string
@@ -21,5 +21,4 @@ export function Step({ title, description, icon: Icon }: stepProps) {
       </View>
     </View>
   )
-
 }

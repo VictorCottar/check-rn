@@ -13,7 +13,7 @@ export default function Index() {
 
       <Steps />
 
-      <Button title='Começar' onPress={() => router.push('/list')} />
+      <Button title="Começar" onPress={() => router.push('/list')} />
     </View>
   )
 }

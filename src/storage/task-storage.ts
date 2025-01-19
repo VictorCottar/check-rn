@@ -34,8 +34,7 @@ async function remove(id: string) {
     const updated = storage.filter((task) => task.id !== id)
 
     await AsyncStorage.setItem(TASKS_STORAGE_KEY, JSON.stringify(updated))
-
-  } catch(error) {
+  } catch (error) {
     throw error
   }
 }

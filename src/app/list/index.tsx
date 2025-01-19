@@ -1,14 +1,21 @@
-import React, { useCallback, useState } from "react"
-import { Header } from "@/components/header"
-import { Priorities } from "@/components/priorities"
-import { Task } from "@/components/task"
-import { View, FlatList, Modal, TouchableOpacity, Text, Alert } from "react-native"
-import { s } from "./styles"
-import { colors } from "@/styles/theme"
-import { priorities } from "@/utils/priorities"
-import { IconX, IconCheck } from "@tabler/icons-react-native"
-import { taskStorage, TaskStorage } from "@/storage/task-storage"
-import { useFocusEffect } from "expo-router"
+import React, { useCallback, useState } from 'react'
+import { Header } from '@/components/header'
+import { Priorities } from '@/components/priorities'
+import { Task } from '@/components/task'
+import {
+  View,
+  FlatList,
+  Modal,
+  TouchableOpacity,
+  Text,
+  Alert,
+} from 'react-native'
+import { s } from './styles'
+import { colors } from '@/styles/theme'
+import { priorities } from '@/utils/priorities'
+import { IconX, IconCheck } from '@tabler/icons-react-native'
+import { taskStorage, TaskStorage } from '@/storage/task-storage'
+import { useFocusEffect } from 'expo-router'
 
 export default function Index() {
   const [priority, setPriority] = useState(priorities[0].name)
@@ -24,7 +31,7 @@ export default function Index() {
   function handleFinish() {
     Alert.alert('Concluir', 'Deseja concluir a tarefa?', [
       { style: 'cancel', text: 'Não' },
-      { text: 'Sim', onPress: finishTask }
+      { text: 'Sim', onPress: finishTask },
     ])
   }
 
@@ -43,18 +50,19 @@ export default function Index() {
     try {
       const response = await taskStorage.get()
 
-      const filtered = response.filter(item => item.priority === priority)
+      const filtered = response.filter((item) => item.priority === priority)
 
       priority === priorities[0].name ? setTasks(response) : setTasks(filtered)
-
     } catch (error) {
       Alert.alert('Tarefas', 'Não foi possível carregar as tarefas')
     }
   }
 
-  useFocusEffect(useCallback(() => {
-    getTasks()
-  }, [priority]))
+  useFocusEffect(
+    useCallback(() => {
+      getTasks()
+    }, [priority]),
+  )
 
   return (
     <View style={s.container}>
@@ -66,7 +74,7 @@ export default function Index() {
 
       <FlatList
         data={tasks}
-        keyExtractor={item => item.id}
+        keyExtractor={(item) => item.id}
         renderItem={({ item }) => (
           <Task
             name={item.name}
@@ -93,16 +101,12 @@ export default function Index() {
             <Text style={s.modalTaskPriority}>{task.priority}</Text>
 
             <View style={s.modalFooter}>
-              <TouchableOpacity
-                onPress={handleFinish}
-              >
+              <TouchableOpacity onPress={handleFinish}>
                 <IconCheck size={28} color={colors.primary} />
               </TouchableOpacity>
             </View>
-
           </View>
         </View>
-
       </Modal>
     </View>
   )

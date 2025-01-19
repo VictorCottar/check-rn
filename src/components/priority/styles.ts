@@ -5,10 +5,10 @@ export const s = StyleSheet.create({
   container: {
     flexDirection: 'row',
     alignItems: 'center',
-    gap: 5
+    gap: 5,
   },
   name: {
     fontSize: 16,
-    fontFamily: fontFamily.bold
-  }
+    fontFamily: fontFamily.bold,
+  },
 })

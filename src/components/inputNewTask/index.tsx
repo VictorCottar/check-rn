@@ -23,23 +23,25 @@ export function InputsNewTask() {
       }
 
       if (!priority) {
-        return Alert.alert('Prioridade', 'Selecione uma prioridade para a tarefa')
+        return Alert.alert(
+          'Prioridade',
+          'Selecione uma prioridade para a tarefa',
+        )
       }
 
       await taskStorage.save({
         id: new Date().getTime().toString(),
         name,
         description,
-        priority
+        priority,
       })
 
       Alert.alert('Sucesso', 'Tarefa adicionada com sucesso', [
         {
           text: 'Ok',
-          onPress: () => router.push('/list')
-        }
+          onPress: () => router.push('/list'),
+        },
       ])
-
     } catch (error) {
       return Alert.alert('Erro', 'Não foi possível adicionar a tarefa')
     }
@@ -70,7 +72,11 @@ export function InputsNewTask() {
 
         <View style={s.priority}>
           <Text style={s.labelPriority}>Prioridade da tarefa</Text>
-          <Priorities selected={priority} onChange={setPriority} typePriority='newTask' />
+          <Priorities
+            selected={priority}
+            onChange={setPriority}
+            typePriority="newTask"
+          />
         </View>
 
         <Button title="Adicionar" onPress={handleAdd} />

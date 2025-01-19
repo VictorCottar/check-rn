@@ -1,12 +1,12 @@
-import { FlatList } from "react-native"
+import { FlatList } from 'react-native'
 import { s } from './styles'
-import { priorities } from "@/utils/priorities"
-import { Priority } from "@/components/priority"
+import { priorities } from '@/utils/priorities'
+import { Priority } from '@/components/priority'
 
 type Props = {
-  selected: string,
-  onChange: (priority: string) => void,
-  typePriority?: string,
+  selected: string
+  onChange: (priority: string) => void
+  typePriority?: string
 }
 
 export function Priorities({ selected, onChange, typePriority }: Props) {

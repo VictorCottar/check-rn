@@ -19,7 +19,6 @@ export function Header() {
         >
           <IconPlus size={36} color={colors.primary} />
         </TouchableOpacity>
-
       </View>
     </>
   )
